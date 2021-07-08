@@ -1,4 +1,5 @@
 #pragma once
+#include <iostream>
 #include <Windows.h>
 
 unsigned short black = 0x0;
@@ -21,4 +22,9 @@ unsigned short btWhite = 0xF;
 void setColor(unsigned short color)
 {
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), color);
+}
+
+void clearConsole()
+{
+	std::cout << "\x1B[2J\x1B[H";
 }

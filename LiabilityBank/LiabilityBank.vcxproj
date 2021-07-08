@@ -145,7 +145,7 @@
     <ClInclude Include="Classes\Account.h" />
     <ClInclude Include="Functions\CreateAccount.h" />
     <ClInclude Include="Functions\HomeMenu.h" />
-    <ClInclude Include="Functions\TextColor.h" />
+    <ClInclude Include="Functions\ConsoleSettings.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

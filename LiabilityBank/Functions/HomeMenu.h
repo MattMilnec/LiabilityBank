@@ -1,6 +1,6 @@
 #pragma once
 #include <iostream>
-#include "../Functions/TextColor.h"
+#include "../Functions/ConsoleSettings.h"
 
 void menu()
 {
