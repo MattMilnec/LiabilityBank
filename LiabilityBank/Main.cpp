@@ -1,6 +1,7 @@
 #include <iostream>
 #include "Functions/HomeMenu.h"
 #include "Functions/CreateAccount.h"
+#include "Functions/Login.h"
 
 int main(int argc, char* argv[])
 {
@@ -21,6 +22,10 @@ int main(int argc, char* argv[])
 			break;
 
 		case 2:
+			if (login())
+			{
+				std::cout << "You logged in successfully";
+			}
 			break;
 
 		case 0:

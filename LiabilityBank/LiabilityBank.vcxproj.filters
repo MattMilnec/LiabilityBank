@@ -32,5 +32,8 @@
     <ClInclude Include="Functions\CreateAccount.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Functions\Login.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
