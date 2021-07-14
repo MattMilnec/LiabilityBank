@@ -35,5 +35,14 @@
     <ClInclude Include="Functions\Login.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Functions\CustomerMenu.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Functions\Transfer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -1,19 +1,17 @@
 #pragma once
-#include <iostream>
-#include "../Functions/ConsoleSettings.h"
 
-void menu()
+void homeMenu()
 {
 	setColor(ltGreen);
-	std::cout << '\n' << " -$$$$- Home Menu -$$$$-" << '\n';
-	std::cout <<         " -----------------------" << '\n';
+	std::cout << "\n -$$$$- Home Menu -$$$$-\n";
+	std::cout <<         " -----------------------\n";
 	setColor(ltPurple);
-	std::cout << "1. Create a new Account" << '\n';
+	std::cout << "1. Create a new Account\n";
 	setColor(ltBlue);
-	std::cout << "2. Login to Existing Account" << '\n';
+	std::cout << "2. Login to Existing Account\n";
 	setColor(ltRed);
-	std::cout << "0. Quit Application" << '\n';
+	std::cout << "0. Quit Application\n";
 	setColor(btWhite);
-	std::cout << '\n' << "Select an option: ";
+	std::cout << "\nSelect an option: ";
 
 }

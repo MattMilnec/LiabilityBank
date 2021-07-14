@@ -1,6 +1,4 @@
 #pragma once
-#include <iostream>
-#include <Windows.h>
 
 unsigned short black = 0x0;
 unsigned short blue = 0x1;

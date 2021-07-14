@@ -1,30 +1,28 @@
-#include <iostream>
-#include "Functions/HomeMenu.h"
-#include "Functions/CreateAccount.h"
-#include "Functions/Login.h"
+#include "Headers.h"
 
 int main(int argc, char* argv[])
 {
+	Account loginAccount;
+
 	setColor(yellow);
-	std::cout << "Welcome to the Liability Bank." << '\n';
+	std::cout << "Welcome to the Liability Bank.\n";
 
 	bool quit = false;
 	while (!quit)
 	{
-		menu();
+		homeMenu();
 		short choice;
 		std::cin >> choice;
 		switch (choice)
 		{
 		case 1:
 			createAccount();
-			quit = true;
 			break;
 
 		case 2:
-			if (login())
+			if (login(loginAccount))
 			{
-				std::cout << "You logged in successfully";
+				customerMenu(loginAccount);
 			}
 			break;
 
@@ -32,7 +30,7 @@ int main(int argc, char* argv[])
 			quit = true;
 			break;
 		}
-		std::cout << '\n' << "Thank you for choosing Liability Bank. Have a nice day!" << '\n';
 	}
+	std::cout << "\nThank you for choosing Liability Bank. Have a nice day!\n";
 	return 0;
 }

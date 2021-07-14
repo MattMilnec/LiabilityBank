@@ -1,10 +1,4 @@
 #pragma once
-#include <iostream>
-#include <fstream>
-#include <string>
-#include <cstdlib>
-#include <ctime>
-#include "../Classes/Account.h"
 
 void createAccount()
 {
@@ -21,8 +15,9 @@ void createAccount()
 	std::cout << "Enter a 4-digit password: ";
 	std::cin >> tempPass;
 	account.setPassword(tempPass);
-	file.open("AccountData.txt");
-	file << std::to_string(account.getNum()) << '\t' << account.getName() << '\t' << account.getBalance();
-	std::cout << '\n' << "Congratulations " << account.getName() << " you have opened a new account!" << '\n';
-	std::cout << "Your account number is: " << account.getNum() << '\n';
+	account.setBalance(0);
+	file.open("AccountData.txt", std::ios::app);
+	file << account.getNum() << "\t" << account.getName() << "\t" << account.getBalance() << "\n";
+	std::cout << "\nCongratulations " << account.getName() << " you have opened a new account!\n";
+	std::cout << "Your account number is: " << account.getNum() << "\n";
 }

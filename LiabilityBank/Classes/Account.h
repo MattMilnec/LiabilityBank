@@ -1,5 +1,4 @@
 #pragma once
-#include <iostream>
 
 class Account
 {
@@ -10,15 +9,6 @@ private:
 	unsigned short password;
 
 public:
-
-	Account()
-	{
-		accNum = NULL;
-		balance = NULL;
-		password = NULL;
-		balance = 0.00f;
-	}
-
 	void setNum(unsigned int num)
 	{
 		accNum = num;
@@ -42,7 +32,7 @@ public:
 		balance += amount;
 	}
 
-	void withdrawal(float amount)
+	void withdraw(float amount)
 	{
 		balance -= amount;
 	}
