@@ -36,7 +36,7 @@ bool login(Account &loginAccount)
 					break;
 				}
 			}
-			std::cout << "Sorry, it appears you do not have an account with that number.\n";
+			std::cout << "\nSorry, it appears you do not have an account with that number.\n";
 			return false;
 			break;
 		case 0:

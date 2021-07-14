@@ -10,7 +10,7 @@ void customerMenu(Account &loginAccount)
 	bool quit = false;
 	while (!quit)
 	{
-		std::cout << "\nYour current account balance is: " << loginAccount.getBalance() << "\n";
+		std::cout << "\nYour current account balance is: $" << loginAccount.getBalance() << "\n";
 
 		std::cout << "\n1. Deposit\n";
 		std::cout << "2. Withdraw\n";
@@ -22,7 +22,7 @@ void customerMenu(Account &loginAccount)
 		{
 		case 1:
 			float deposit;
-			std::cout << "Enter an amount to deposit: ";
+			std::cout << "\nEnter an amount to deposit: $";
 			std::cin >> deposit;
 			loginAccount.deposit(deposit);
 			for (int i = 0; i < accounts.size() - 1; i++)
@@ -35,9 +35,14 @@ void customerMenu(Account &loginAccount)
 
 		case 2:
 			float withdraw;
-			std::cout << "Enter an amount to withdraw: ";
+			std::cout << "\nEnter an amount to withdraw: $";
 			std::cin >> withdraw;
-			loginAccount.withdraw(withdraw);
+			if (withdraw > loginAccount.getBalance())
+			{
+				std::cout << "\nSorry, you do not have the required funds to withdraw that amount.\n";
+				break;
+			}
+			else loginAccount.withdraw(withdraw);
 			for (int i = 0; i < accounts.size() - 1; i++)
 			{
 				if (accounts[i].getNum() == loginAccount.getNum())
