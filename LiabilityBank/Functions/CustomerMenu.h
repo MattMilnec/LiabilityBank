@@ -25,7 +25,7 @@ void customerMenu(Account &loginAccount)
 			std::cout << "\nEnter an amount to deposit: $";
 			std::cin >> deposit;
 			loginAccount.deposit(deposit);
-			for (int i = 0; i < accounts.size() - 1; i++)
+			for (int i = 0; i < accounts.size(); i++)
 			{
 				if (accounts[i].getNum() == loginAccount.getNum())
 					accounts[i].setBalance(loginAccount.getBalance());
@@ -43,11 +43,12 @@ void customerMenu(Account &loginAccount)
 				break;
 			}
 			else loginAccount.withdraw(withdraw);
-			for (int i = 0; i < accounts.size() - 1; i++)
+			for (int i = 0; i < accounts.size(); i++)
 			{
 				if (accounts[i].getNum() == loginAccount.getNum())
 					accounts[i].setBalance(loginAccount.getBalance());
 			}
+			toFile(accounts);
 			break;
 
 		case 0:
