@@ -7,6 +7,7 @@ bool login(Account &loginAccount)
 	unsigned int tempNum;
 	std::string tempName;
 	float tempBalance;
+	unsigned short tempColor;
 
 	file.open("AccountData.txt");
 	bool quit = false;
@@ -24,13 +25,14 @@ bool login(Account &loginAccount)
 			std::cout << "\nEnter your account number: ";
 			std::cin >> inputNum;
 
-			while (file >> tempNum >> tempName >> tempBalance)
+			while (file >> tempNum >> tempName >> tempBalance >> tempColor)
 			{
 				if (inputNum == tempNum)
 				{
 					loginAccount.setNum(tempNum);
 					loginAccount.setName(tempName);
 					loginAccount.setBalance(tempBalance);
+					loginAccount.setAccountColor(tempColor);
 					quit = true;
 					return true;
 					break;

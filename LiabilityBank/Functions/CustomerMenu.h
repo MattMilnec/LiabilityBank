@@ -5,6 +5,7 @@ void customerMenu(Account &loginAccount)
 	std::vector<Account> accounts;
 	toVector(accounts);
 	clearConsole();
+	setColor(loginAccount.getAccountColor());
 	std::cout << "Welcome Back " << loginAccount.getName() << "!\n";
 
 	bool quit = false;
@@ -14,6 +15,7 @@ void customerMenu(Account &loginAccount)
 
 		std::cout << "\n1. Deposit\n";
 		std::cout << "2. Withdraw\n";
+		std::cout << "3. Change text color\n";
 		std::cout << "0. Back to home menu\n";
 		std::cout << "\nSelect an option: ";
 		short choice;
@@ -51,8 +53,23 @@ void customerMenu(Account &loginAccount)
 			toFile(accounts);
 			break;
 
+		case 3: 
+			changeColorMenu(loginAccount);
+			for (int i = 0; i < accounts.size(); i++)
+			{
+				if (accounts[i].getNum() == loginAccount.getNum())
+					accounts[i].setAccountColor(loginAccount.getAccountColor());
+			}
+			toFile(accounts);
+			clearConsole();
+			break;
+
 		case 0:
 			quit = true;
+			break;
+
+		default:
+			std::cout << "Sorry, your input was invalid. Please try again.";
 			break;
 		}
 	}
