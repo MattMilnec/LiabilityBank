@@ -9,7 +9,7 @@ bool login(Account &loginAccount)
 	float tempBalance;
 	unsigned short tempColor;
 
-	file.open("AccountData.txt");
+	file.open("TextFiles/AccountData.txt");
 	bool quit = false;
 	while (!quit)
 	{

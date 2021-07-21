@@ -31,6 +31,8 @@ int main(int argc, char* argv[])
 			break;
 		}
 	}
+	setColor(yellow);
 	std::cout << "\nThank you for choosing Liability Bank. Have a nice day!\n";
+	setColor(btWhite);
 	return 0;
 }

@@ -7,7 +7,6 @@ private:
 	std::string accName;
 	float balance;
 	unsigned short textColor;
-	unsigned short password;
 
 public:
 	void setNum(unsigned int num)
@@ -56,10 +55,5 @@ public:
 	unsigned short getAccountColor()
 	{
 		return textColor;
-	}
-	
-	void setPassword(unsigned short pass)
-	{
-		password = pass;
 	}
 };

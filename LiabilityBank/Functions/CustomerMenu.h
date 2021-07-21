@@ -3,6 +3,7 @@
 void customerMenu(Account &loginAccount)
 {
 	std::vector<Account> accounts;
+	std::string fileName = "TextFiles/" + std::to_string(loginAccount.getNum()) + ".txt";
 	toVector(accounts);
 	clearConsole();
 	setColor(loginAccount.getAccountColor());
@@ -32,6 +33,7 @@ void customerMenu(Account &loginAccount)
 				if (accounts[i].getNum() == loginAccount.getNum())
 					accounts[i].setBalance(loginAccount.getBalance());
 			}
+			toFileDeposit(deposit, fileName);
 			toFile(accounts);
 			break;
 
@@ -50,6 +52,7 @@ void customerMenu(Account &loginAccount)
 				if (accounts[i].getNum() == loginAccount.getNum())
 					accounts[i].setBalance(loginAccount.getBalance());
 			}
+			toFileWithdraw(withdraw, fileName);
 			toFile(accounts);
 			break;
 
