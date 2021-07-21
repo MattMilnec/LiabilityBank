@@ -139,9 +139,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Main.cpp" />
-  </ItemGroup>
-  <ItemGroup>
     <ClInclude Include="Classes\Account.h" />
     <ClInclude Include="Functions\CreateAccount.h" />
     <ClInclude Include="Functions\CustomerMenu.h" />
@@ -149,9 +146,8 @@
     <ClInclude Include="Functions\ConsoleSettings.h" />
     <ClInclude Include="Functions\Login.h" />
     <ClInclude Include="Functions\Transfer.h" />
-    <ClInclude Include="Headers.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
-</Project> 
+</Project>
