@@ -9,7 +9,7 @@ bool login(Account &loginAccount)
 	float tempBalance;
 	unsigned short tempColor;
 
-	file.open("TextFiles/AccountData.txt");
+	file.open("src/TextFiles/AccountData.txt");
 	bool quit = false;
 	while (!quit)
 	{
@@ -44,6 +44,10 @@ bool login(Account &loginAccount)
 		case 0:
 			quit = true;
 			return false;
+			break;
+
+		default:
+			std::cout << "\nSorry, your input was invalid. Please try again.\n";
 			break;
 		}
 	}

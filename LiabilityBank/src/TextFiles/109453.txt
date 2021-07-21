@@ -1,0 +1,4 @@
+Deposit:   $100 --- Wed Jul 21 01:20:42 2021
+		Balance: $100
+Withdraw: -$20 --- Wed Jul 21 01:20:54 2021
+		Balance: $80

@@ -4,7 +4,7 @@ void toVector(std::vector<Account> &accounts)
 {
 	std::ifstream file;
 	Account tempAccount;
-	file.open("TextFiles/AccountData.txt");
+	file.open("src/TextFiles/AccountData.txt");
 	
 	unsigned int tempNum;
 	std::string tempName;
@@ -21,24 +21,28 @@ void toVector(std::vector<Account> &accounts)
 	}
 }
 
-void toFileDeposit(float &amount, std::string &fileName)
+void toFileDeposit(float &amount, std::string &fileName, Account &loginAccount)
 {
 	std::ofstream file;
 	file.open(fileName, std::ios::app);
-	file << "Deposit: $" << amount << "\n";
+	std::time_t time = std::chrono::system_clock::to_time_t(std::chrono::system_clock::now());
+	file << "Deposit:   $" << amount << " --- " << std::ctime(&time);
+	file << "\t\tBalance: $" << loginAccount.getBalance() << "\n";
 }
 
-void toFileWithdraw(float& amount, std::string& fileName)
+void toFileWithdraw(float &amount, std::string &fileName, Account& loginAccount)
 {
 	std::ofstream file;
 	file.open(fileName, std::ios::app);
-	file << "Withdraw: $" << amount << "\n";
+	std::time_t time = std::chrono::system_clock::to_time_t(std::chrono::system_clock::now());
+	file << "Withdraw: -$" << amount << " --- " << std::ctime(&time);
+	file << "\t\tBalance: $" << loginAccount.getBalance() << "\n";
 }
 
-void toFile(std::vector<Account>& accounts)
+void toFile(std::vector<Account> &accounts)
 {
 	std::ofstream file2;
-	file2.open("TextFiles/AccountData.txt");
+	file2.open("src/TextFiles/AccountData.txt");
 	for (int i = 0; i < accounts.size(); i++)
 	{
 		file2 << accounts[i].getNum() << "\t" << accounts[i].getName() << "\t" << accounts[i].getBalance() << "\t" << accounts[i].getAccountColor() << "\n";

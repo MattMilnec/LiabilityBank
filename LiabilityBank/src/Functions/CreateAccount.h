@@ -13,7 +13,7 @@ void createAccount()
 	
 	srand((unsigned)time(0));
 	std::ifstream readFile;
-	readFile.open("TextFiles/AccountData.txt");
+	readFile.open("src/TextFiles/AccountData.txt");
 	bool different = false;
 	if (readFile.peek() == std::ifstream::traits_type::eof())
 	{
@@ -36,8 +36,8 @@ void createAccount()
 	account.setName(tempName);
 	account.setBalance(0);
 	account.setAccountColor(btWhite);
-	file.open("TextFiles/AccountData.txt", std::ios::app);
-	std::string fileName = "TextFiles/" + std::to_string(account.getNum()) + ".txt";
+	file.open("src/TextFiles/AccountData.txt", std::ios::app);
+	std::string fileName = "src/TextFiles/" + std::to_string(account.getNum()) + ".txt";
 	customerFile.open(fileName);
 	file << account.getNum() << "\t" << account.getName() << "\t" << account.getBalance() << "\t" << account.getAccountColor() << "\n";
 	std::cout << "\nCongratulations " << account.getName() << " you have opened a new account!\n";

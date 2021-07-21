@@ -10,7 +10,18 @@ int main(int argc, char* argv[])
 	bool quit = false;
 	while (!quit)
 	{
-		homeMenu();
+		setColor(ltGreen);
+		std::cout << "\n -$$$$- Home Menu -$$$$-\n";
+		std::cout << " -----------------------\n";
+		setColor(ltPurple);
+		std::cout << "1. Create a new Account\n";
+		setColor(ltBlue);
+		std::cout << "2. Login to Existing Account\n";
+		setColor(ltRed);
+		std::cout << "0. Quit Application\n";
+		setColor(btWhite);
+		std::cout << "\nSelect an option: ";
+
 		short choice;
 		std::cin >> choice;
 		switch (choice)
@@ -28,6 +39,10 @@ int main(int argc, char* argv[])
 
 		case 0:
 			quit = true;
+			break;
+
+		default:
+			std::cout << "\nSorry, your input was invalid. Please try again.\n";
 			break;
 		}
 	}

@@ -1,3 +1,0 @@
-Deposit: $70.55
-Withdraw: $10
-Deposit: $1

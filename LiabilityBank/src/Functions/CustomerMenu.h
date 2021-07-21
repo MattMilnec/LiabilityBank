@@ -3,7 +3,7 @@
 void customerMenu(Account &loginAccount)
 {
 	std::vector<Account> accounts;
-	std::string fileName = "TextFiles/" + std::to_string(loginAccount.getNum()) + ".txt";
+	std::string fileName = "src/TextFiles/" + std::to_string(loginAccount.getNum()) + ".txt";
 	toVector(accounts);
 	clearConsole();
 	setColor(loginAccount.getAccountColor());
@@ -33,7 +33,7 @@ void customerMenu(Account &loginAccount)
 				if (accounts[i].getNum() == loginAccount.getNum())
 					accounts[i].setBalance(loginAccount.getBalance());
 			}
-			toFileDeposit(deposit, fileName);
+			toFileDeposit(deposit, fileName, loginAccount);
 			toFile(accounts);
 			break;
 
@@ -52,7 +52,7 @@ void customerMenu(Account &loginAccount)
 				if (accounts[i].getNum() == loginAccount.getNum())
 					accounts[i].setBalance(loginAccount.getBalance());
 			}
-			toFileWithdraw(withdraw, fileName);
+			toFileWithdraw(withdraw, fileName, loginAccount);
 			toFile(accounts);
 			break;
 
@@ -72,7 +72,7 @@ void customerMenu(Account &loginAccount)
 			break;
 
 		default:
-			std::cout << "Sorry, your input was invalid. Please try again.";
+			std::cout << "\nSorry, your input was invalid. Please try again.\n";
 			break;
 		}
 	}
