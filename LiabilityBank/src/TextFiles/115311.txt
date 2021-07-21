@@ -1,0 +1,6 @@
+Deposit:   $777	--- Wed Jul 21 01:40:25 2021
+		Balance: $777
+Deposit:   $29	--- Wed Jul 21 01:40:32 2021
+		Balance: $806
+Withdraw: -$300.65	--- Wed Jul 21 01:40:47 2021
+		Balance: $505.35

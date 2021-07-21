@@ -4,6 +4,9 @@ void customerMenu(Account &loginAccount)
 {
 	std::vector<Account> accounts;
 	std::string fileName = "src/TextFiles/" + std::to_string(loginAccount.getNum()) + ".txt";
+	std::ifstream file(fileName);
+	std::string temp;
+	char c;
 	toVector(accounts);
 	clearConsole();
 	setColor(loginAccount.getAccountColor());
@@ -16,7 +19,8 @@ void customerMenu(Account &loginAccount)
 
 		std::cout << "\n1. Deposit\n";
 		std::cout << "2. Withdraw\n";
-		std::cout << "3. Change text color\n";
+		std::cout << "3. Display transaction history\n";
+		std::cout << "4. Change text color\n";
 		std::cout << "0. Back to home menu\n";
 		std::cout << "\nSelect an option: ";
 		short choice;
@@ -56,7 +60,20 @@ void customerMenu(Account &loginAccount)
 			toFile(accounts);
 			break;
 
-		case 3: 
+		case 3:
+			clearConsole();
+			while (file >> temp)
+			{
+				
+				std::cout << temp << " ";
+				file.get(c);
+				if (c == '\n')
+					std::cout << "\n";
+			}
+			std::cout << "------------------------------------------";
+			break;
+
+		case 4: 
 			changeColorMenu(loginAccount);
 			for (int i = 0; i < accounts.size(); i++)
 			{

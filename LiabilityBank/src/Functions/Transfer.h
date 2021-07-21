@@ -26,7 +26,7 @@ void toFileDeposit(float &amount, std::string &fileName, Account &loginAccount)
 	std::ofstream file;
 	file.open(fileName, std::ios::app);
 	std::time_t time = std::chrono::system_clock::to_time_t(std::chrono::system_clock::now());
-	file << "Deposit:   $" << amount << " --- " << std::ctime(&time);
+	file << "Deposit:   $" << amount << "\t--- " << std::ctime(&time);
 	file << "\t\tBalance: $" << loginAccount.getBalance() << "\n";
 }
 
@@ -35,7 +35,7 @@ void toFileWithdraw(float &amount, std::string &fileName, Account& loginAccount)
 	std::ofstream file;
 	file.open(fileName, std::ios::app);
 	std::time_t time = std::chrono::system_clock::to_time_t(std::chrono::system_clock::now());
-	file << "Withdraw: -$" << amount << " --- " << std::ctime(&time);
+	file << "Withdraw: -$" << amount << "\t--- " << std::ctime(&time);
 	file << "\t\tBalance: $" << loginAccount.getBalance() << "\n";
 }
 
